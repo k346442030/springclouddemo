@@ -1,0 +1,52 @@
+server:
+  port: 8085
+  session:
+    timeout: 30
+  context-path: /
+logging:
+  level:
+    root: INFO
+    com.platform.server: Debug
+    com.platform.server.feign: Debug
+spring:
+#  boot:
+#    admin:
+#      url: http://localhost:8888
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database: mysql
+  datasource:
+    url: jdbc:mysql://rm-bp1y080uv7v507ms8o.mysql.rds.aliyuncs.com:3306/usercenter
+    username: root
+    password: ykt123!@#
+    driver-class-name: com.mysql.jdbc.Driver
+    tomcat:
+      test-on-borrow: true
+      validation-query: SELECT 1
+  redis:
+    host: 116.62.152.11
+    port: 6379
+    maxTotal: 100
+    maxIdle: 10
+    maxWaitMillis: 100000
+    password: my@123456
+  aop:
+    proxy-target-class: true
+  application:
+    name: usercenter
+#eureka:
+#  instance:
+#    hostname: smartmusic
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka/
+
+##设置超时熔断时间
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+#关闭超时熔断
+#hystrix.command.default.execution.timeout.enabled: false
+##关闭熔断器
+#feign.hystrix.enabled: false

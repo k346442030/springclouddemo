@@ -1,0 +1,20 @@
+#security:
+#  basic:
+#    enabled: true
+#  user:
+#    name: user
+#    password: password123
+server:
+  port: 8761
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:
+      defalutZone : http://localhost:8761/eureka/
+#spring:
+#  boot:
+#    admin:
+#      url: http://localhost:8888
+  application:
+    name: eureka

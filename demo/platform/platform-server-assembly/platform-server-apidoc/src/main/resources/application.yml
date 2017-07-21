@@ -1,0 +1,14 @@
+server:
+  port: 8089
+spring:
+  application:
+    name: apidoc
+  aop:
+    proxy-target-class: true
+  redis:
+    host: 116.62.152.11
+    port: 6379
+    maxTotal: 100
+    maxIdle: 10
+    maxWaitMillis: 100000
+    password: my@123456
